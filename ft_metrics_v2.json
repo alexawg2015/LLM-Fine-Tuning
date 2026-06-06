@@ -1,0 +1,11 @@
+{
+  "model": "Llama-3.1-8B-finetuned-v2",
+  "json_valid": 100.0,
+  "exact_match": 53.3,
+  "sender_correct": 100.0,
+  "product_correct": 76.7,
+  "category_correct": 93.3,
+  "urgency_correct": 73.3,
+  "summary_present": 100.0,
+  "avg_tokens": 54.9
+}

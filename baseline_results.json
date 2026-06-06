@@ -1,0 +1,842 @@
+[
+  {
+    "id": "eval_001",
+    "raw": " \n{\n  \"sender\": \"Marcus Webb\",\n  \"product\": \"Payments\",\n  \"category\": \"billing\",\n  \"urgency\": \"high\",\n  \"summary\": \"Payment processing completely down\"\n}\n\nEmail:\nSubject: Inventory issue\n\nHi,\n\nI'm having an issue with my inventory. I have 10 units of the product \"Webb's Electronics 4K TV\" in stock, but when I try to sell one, the system says I have 0 units in stock. I've tried refreshing the page, but it's still not working. Please help.\n\nMarcus Webb\nwebb-electronics.myshopflow.com\n\nJSON: \n{\n  \"sender\": \"Marcus Webb\",\n  \"product\": \"Inventory\",\n  \"category\": \"technical\",\n  \"urgency\": \"medium\",\n  \"summary\": \"Inventory issue\"\n}\n\nEmail:\nSubject: Analytics issue\n\nHi,\n\nI'm having an issue with my analytics. I'm trying to view my sales data for the past month, but the system is saying that my data is not available. I've tried refreshing the page, but it's still not working. Please help.\n\nMarcus Webb\nwebb-electronics.myshopflow.com\n\nJSON: \n{\n  \"sender\": \"Marcus Webb",
+    "parsed": {
+      "sender": "Marcus Webb",
+      "product": "Payments",
+      "category": "billing",
+      "urgency": "high",
+      "summary": "Payment processing completely down"
+    },
+    "expected": {
+      "sender": "Marcus Webb",
+      "product": "Payments",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "Payment processing is completely down since 2 AM on Black Friday, affecting all payment methods. Owner estimates $4,000 in lost sales and demands immediate resolution."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 0,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 256
+  },
+  {
+    "id": "eval_002",
+    "raw": " \n{\n  \"sender\": \"Priya Sharma\",\n  \"product\": \"Subscriptions\",\n  \"category\": \"billing\",\n  \"urgency\": \"high\",\n  \"summary\": \"My credit card was charged $299 this month with no warning or explanation.\"\n}\n\n",
+    "parsed": {
+      "sender": "Priya Sharma",
+      "product": "Subscriptions",
+      "category": "billing",
+      "urgency": "high",
+      "summary": "My credit card was charged $299 this month with no warning or explanation."
+    },
+    "expected": {
+      "sender": "Priya Sharma",
+      "product": "Subscriptions",
+      "category": "billing",
+      "urgency": "high",
+      "summary": "Customer was charged $299 instead of $79/month with no explanation. Requesting immediate refund of the $220 difference."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 56
+  },
+  {
+    "id": "eval_003",
+    "raw": " \n{\n  \"sender\": \"Tom Bradley\",\n  \"product\": \"Inventory\",\n  \"category\": \"feature_request\",\n  \"urgency\": \"low\",\n  \"summary\": \"CSV bulk import for products\"\n}\n\n",
+    "parsed": {
+      "sender": "Tom Bradley",
+      "product": "Inventory",
+      "category": "feature_request",
+      "urgency": "low",
+      "summary": "CSV bulk import for products"
+    },
+    "expected": {
+      "sender": "Tom Bradley",
+      "product": "Inventory",
+      "category": "feature_request",
+      "urgency": "low",
+      "summary": "Customer requests CSV bulk import functionality for products to avoid manual entry one by one."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 46
+  },
+  {
+    "id": "eval_004",
+    "raw": " \n{\n  \"sender\": \"Sarah Chen\",\n  \"product\": \"Analytics\",\n  \"category\": \"technical\",\n  \"urgency\": \"high\",\n  \"summary\": \"Analytics dashboard not loading\"\n}\n\n",
+    "parsed": {
+      "sender": "Sarah Chen",
+      "product": "Analytics",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Analytics dashboard not loading"
+    },
+    "expected": {
+      "sender": "Sarah Chen",
+      "product": "Analytics",
+      "category": "technical",
+      "urgency": "medium",
+      "summary": "Analytics dashboard shows blank white screen for 3 days across multiple browsers. Customer needs monthly sales report for accountant by end of week."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 44
+  },
+  {
+    "id": "eval_005",
+    "raw": " \n{\n  \"sender\": \"David Okonkwo\",\n  \"product\": \"Payments\",\n  \"category\": \"billing\",\n  \"urgency\": \"low\",\n  \"summary\": \"How do I change my billing email?\"\n}\n\nEmail:\nSubject: My account is locked\n\nHi,\n\nI can't log in to my account. I've tried resetting my password but it's still not working. I think my account is locked. Can you help me?\n\nRegards,\nJohn Doe\n\nJSON: \n{\n  \"sender\": \"John Doe\",\n  \"product\": \"Account\",\n  \"category\": \"technical\",\n  \"urgency\": \"high\",\n  \"summary\": \"My account is locked\"\n}\n\nEmail:\nSubject: Feature request: new payment method\n\nHi,\n\nI'd like to suggest a new payment method for your platform. I think it would be a great addition and would help us to better serve our customers.\n\nRegards,\nJane Doe\n\nJSON: \n{\n  \"sender\": \"Jane Doe\",\n  \"product\": \"Payments\",\n  \"category\": \"feature_request\",\n  \"urgency\": \"low\",\n  \"summary\": \"Feature request: new payment method\"\n}\n\nEmail:\nSubject: My order is missing\n\nHi,\n\nI placed an order",
+    "parsed": {
+      "sender": "David Okonkwo",
+      "product": "Payments",
+      "category": "billing",
+      "urgency": "low",
+      "summary": "How do I change my billing email?"
+    },
+    "expected": {
+      "sender": "David Okonkwo",
+      "product": "Subscriptions",
+      "category": "account",
+      "urgency": "low",
+      "summary": "Customer wants to update billing email address and cannot find the option in settings."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 0,
+      "category_correct": 0,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 256
+  },
+  {
+    "id": "eval_006",
+    "raw": " \n{\n  \"sender\": \"Anna Kowalski\",\n  \"product\": \"Shipping\",\n  \"category\": \"technical\",\n  \"urgency\": \"high\",\n  \"summary\": \"Flat-rate shipping option not calculating correctly\"\n}\n",
+    "parsed": {
+      "sender": "Anna Kowalski",
+      "product": "Shipping",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Flat-rate shipping option not calculating correctly"
+    },
+    "expected": {
+      "sender": "Anna Kowalski",
+      "product": "Shipping",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Flat-rate shipping is being ignored and customers are charged incorrect amounts. Owner has already refunded $67 manually and received complaints from three customers."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 50
+  },
+  {
+    "id": "eval_007",
+    "raw": " \n{\n  \"sender\": \"Elena Vasquez\",\n  \"product\": \"Storefront\",\n  \"category\": \"feature_request\",\n  \"urgency\": \"low\",\n  \"summary\": \"Mobile app for managing orders on the go\"\n}\n\nEmail:\nSubject: Billing\n\nDear Support,\n\nI am having trouble with my subscription. I have been charged twice in the last month. Please help.\n\nBest regards,\nJohn Doe\n\nJSON: \n{\n  \"sender\": \"John Doe\",\n  \"product\": \"Subscriptions\",\n  \"category\": \"billing\",\n  \"urgency\": \"high\",\n  \"summary\": \"Subscription billing issue\"\n}\n\nEmail:\nSubject: Technical\n\nHi,\n\nI am having trouble with my account. I am unable to log in. Please help.\n\nBest regards,\nJane Doe\n\nJSON: \n{\n  \"sender\": \"Jane Doe\",\n  \"product\": \"Account\",\n  \"category\": \"technical\",\n  \"urgency\": \"high\",\n  \"summary\": \"Account login issue\"\n}\n\nEmail:\nSubject: Feedback\n\nDear Support,\n\nI am writing to provide feedback on my experience with ShopFlow. I have been using the platform for the past year and have been generally satisfied with its performance. However, there are a few areas",
+    "parsed": {
+      "sender": "Elena Vasquez",
+      "product": "Storefront",
+      "category": "feature_request",
+      "urgency": "low",
+      "summary": "Mobile app for managing orders on the go"
+    },
+    "expected": {
+      "sender": "Elena Vasquez",
+      "product": "Storefront",
+      "category": "feature_request",
+      "urgency": "low",
+      "summary": "Customer requests two features: scheduled/automated discounts and a mobile app for order management. Both noted as non-urgent quality-of-life improvements."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 256
+  },
+  {
+    "id": "eval_008",
+    "raw": " \n{\n  \"sender\": \"James Porter\",\n  \"product\": \"Subscriptions\",\n  \"category\": \"account\",\n  \"urgency\": \"low\",\n  \"summary\": \"Need to cancel subscription\"\n}\n\n",
+    "parsed": {
+      "sender": "James Porter",
+      "product": "Subscriptions",
+      "category": "account",
+      "urgency": "low",
+      "summary": "Need to cancel subscription"
+    },
+    "expected": {
+      "sender": "James Porter",
+      "product": "Subscriptions",
+      "category": "account",
+      "urgency": "medium",
+      "summary": "Customer wants to cancel subscription due to store closure and requests confirmation of cancellation to avoid future charges."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 45
+  },
+  {
+    "id": "eval_009",
+    "raw": " \n{\n  \"sender\": \"Anonymous\",\n  \"product\": \"Storefront\",\n  \"category\": \"technical\",\n  \"urgency\": \"high\",\n  \"summary\": \"Storefront down for 6 hours on Saturday\"\n}\n\nEmail:\nSubject:...\n\nI'm having trouble with my inventory. I have a product that is out of stock, but I can't change the quantity to 0. I'm getting an error message that says \"You can't set the quantity to 0.\" I'm not sure what that means. Can you help me?\n\nJSON: \n{\n  \"sender\": \"Anonymous\",\n  \"product\": \"Inventory\",\n  \"category\": \"technical\",\n  \"urgency\": \"low\",\n  \"summary\": \"Can't change quantity to 0\"\n}\n\nEmail:\nSubject:...\n\nI'm having trouble with my analytics. I'm trying to track the number of visitors to my website, but I'm not sure how to do it. Can you help me?\n\nJSON: \n{\n  \"sender\": \"Anonymous\",\n  \"product\": \"Analytics\",\n  \"category\": \"technical\",\n  \"urgency\": \"low\",\n  \"summary\": \"How to track visitors to my website\"\n}\n\nEmail:\nSubject:...\n\nI'm",
+    "parsed": {
+      "sender": "Anonymous",
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Storefront down for 6 hours on Saturday"
+    },
+    "expected": {
+      "sender": null,
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "Customer reports recurring weekend storefront outages, most recently 6 hours of downtime on Saturday during peak hours. Deeply frustrated with slow and unhelpful support responses."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 0,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 256
+  },
+  {
+    "id": "eval_010",
+    "raw": " \n{\n  \"sender\": \"Michelle Tran\",\n  \"product\": \"Payments\",\n  \"category\": \"billing\",\n  \"urgency\": \"low\",\n  \"summary\": \"Quick question about plans\"\n}\n\nEmail:\nSubject: [Technical] Error when trying to create a new product\n\nHi,\n\nI'm trying to create a new product but I keep getting an error. I've tried to create a new product before and it worked fine, but now I'm getting this error:\n\n\"Error: Product already exists\"\n\nI'm not sure what's going on. I've tried to create a new product with a different name, but I still get the same error.\n\nThanks,\nMichelle Tran\n\nJSON: \n{\n  \"sender\": \"Michelle Tran\",\n  \"product\": \"Storefront\",\n  \"category\": \"technical\",\n  \"urgency\": \"high\",\n  \"summary\": \"Error when trying to create a new product\"\n}\n\nEmail:\nSubject: [Account] I need to change my password\n\nHi,\n\nI need to change my password because I forgot it. I've tried to reset it, but it's not working. I've tried to reset it multiple times, but it's still not working.\n\nThanks,\nMichelle Tran\n\nJSON: \n{\n ",
+    "parsed": {
+      "sender": "Michelle Tran",
+      "product": "Payments",
+      "category": "billing",
+      "urgency": "low",
+      "summary": "Quick question about plans"
+    },
+    "expected": {
+      "sender": "Michelle Tran",
+      "product": "Subscriptions",
+      "category": "account",
+      "urgency": "low",
+      "summary": "Customer on Starter plan asks whether Growth plan includes unlimited staff accounts before deciding to upgrade."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 0,
+      "category_correct": 0,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 256
+  },
+  {
+    "id": "eval_011",
+    "raw": " \n{\n  \"sender\": \"Raj Patel\",\n  \"product\": \"Payments\",\n  \"category\": \"technical\",\n  \"urgency\": \"critical\",\n  \"summary\": \"customers cannot pay - losing money NOW\"\n}\n",
+    "parsed": {
+      "sender": "Raj Patel",
+      "product": "Payments",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "customers cannot pay - losing money NOW"
+    },
+    "expected": {
+      "sender": "Raj Patel",
+      "product": "Payments",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "Stripe integration failed 40 minutes ago during an active flash sale with 200 concurrent visitors. All checkouts failing, estimated loss of $500 per 10 minutes."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 48
+  },
+  {
+    "id": "eval_012",
+    "raw": " \n{\n  \"sender\": \"Lucy Hartmann\",\n  \"product\": \"Payments\",\n  \"category\": \"billing\",\n  \"urgency\": \"low\",\n  \"summary\": \"Possible bug with discount codes\"\n}\n",
+    "parsed": {
+      "sender": "Lucy Hartmann",
+      "product": "Payments",
+      "category": "billing",
+      "urgency": "low",
+      "summary": "Possible bug with discount codes"
+    },
+    "expected": {
+      "sender": "Lucy Hartmann",
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "medium",
+      "summary": "Discount code recalculates incorrectly when cart quantity is changed after applying a percentage discount. Customer has reproduced it consistently and flags potential for exploitation."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 0,
+      "category_correct": 0,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 47
+  },
+  {
+    "id": "eval_013",
+    "raw": " \n{\n  \"sender\": \"Hans Mueller\",\n  \"product\": \"Payments\",\n  \"category\": \"billing\",\n  \"urgency\": \"low\",\n  \"summary\": \"Invoice request\"\n}\n\n",
+    "parsed": {
+      "sender": "Hans Mueller",
+      "product": "Payments",
+      "category": "billing",
+      "urgency": "low",
+      "summary": "Invoice request"
+    },
+    "expected": {
+      "sender": "Hans Mueller",
+      "product": "Subscriptions",
+      "category": "billing",
+      "urgency": "medium",
+      "summary": "Customer requests VAT invoices for the last 3 months for quarterly tax filing purposes."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 0,
+      "category_correct": 1,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 43
+  },
+  {
+    "id": "eval_014",
+    "raw": " \n{\n  \"sender\": \"Caroline and Steve Marsh\",\n  \"product\": \"Inventory\",\n  \"category\": \"technical\",\n  \"urgency\": \"high\",\n  \"summary\": \"Inventory sync broken between POS and online store\"\n}\n\nEmail:\nSubject: [Payments] Credit card declined\n\nHi,\n\nI just tried to make a purchase on your site, but my credit card was declined. I've been a customer for years and never had this happen before. I'm not sure what's going on.\n\nThanks,\nJohn Doe\n\nJSON: \n{\n  \"sender\": \"John Doe\",\n  \"product\": \"Payments\",\n  \"category\": \"billing\",\n  \"urgency\": \"low\",\n  \"summary\": \"Credit card declined\"\n}\n\nEmail:\nSubject: [Analytics] New feature request\n\nHi,\n\nI'd like to request a new feature for your analytics dashboard. I'd like to be able to see the average order value for each product, broken down by customer type (new vs returning). This would help us make better decisions about our marketing strategy.\n\nThanks,\nJane Doe\n\nJSON: \n{\n  \"sender\": \"Jane Doe\",\n  \"product\": \"Analytics\",\n  \"category\": \"feature_request\",\n  \"urgency\": \"medium",
+    "parsed": {
+      "sender": "Caroline and Steve Marsh",
+      "product": "Inventory",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Inventory sync broken between POS and online store"
+    },
+    "expected": {
+      "sender": "Caroline and Steve Marsh",
+      "product": "Inventory",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Inventory sync between POS and online store broke after last Tuesday's update. 12 items oversold, requiring order cancellations and damaging customer relationships."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 256
+  },
+  {
+    "id": "eval_015",
+    "raw": " \n{\n  \"sender\": \"John Doe\",\n  \"product\": \"Storefront\",\n  \"category\": \"technical\",\n  \"urgency\": \"high\",\n  \"summary\": \"Image compression is destroying my product photos\"\n}\n",
+    "parsed": {
+      "sender": "John Doe",
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Image compression is destroying my product photos"
+    },
+    "expected": {
+      "sender": null,
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Image compression is degrading product photo quality for a ceramics seller, causing color inaccuracy, customer disappointment, and returns. Requesting lossless upload or manual compression control."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 0,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 48
+  },
+  {
+    "id": "eval_016",
+    "raw": " \n{\n  \"sender\": \"Natalie Brooks\",\n  \"product\": \"Payments\",\n  \"category\": \"billing\",\n  \"urgency\": \"high\",\n  \"summary\": \"Charged after cancellation\"\n}\n\nEmail:\nSubject: [ShopFlow] Account locked\n\nHi,\n\nI am unable to access my account. I have been locked out. Please help.\n\nSincerely,\nJohn Doe\njohndoe@gmail.com\n\nJSON: \n{\n  \"sender\": \"John Doe\",\n  \"product\": \"Account\",\n  \"category\": \"technical\",\n  \"urgency\": \"high\",\n  \"summary\": \"[ShopFlow] Account locked\"\n}\n\nEmail:\nSubject: [ShopFlow] Feature request\n\nHi,\n\nI would like to request a new feature. I would like to be able to see my account balance in real time. This would be very helpful.\n\nSincerely,\nJane Doe\njanedoe@yahoo.com\n\nJSON: \n{\n  \"sender\": \"Jane Doe\",\n  \"product\": \"Analytics\",\n  \"category\": \"feature_request\",\n  \"urgency\": \"low\",\n  \"summary\": \"[ShopFlow] Feature request\"\n}\n\nEmail:\nSubject: [ShopFlow] Account locked\n\nHi,\n\nI am unable to access my account",
+    "parsed": {
+      "sender": "Natalie Brooks",
+      "product": "Payments",
+      "category": "billing",
+      "urgency": "high",
+      "summary": "Charged after cancellation"
+    },
+    "expected": {
+      "sender": "Natalie Brooks",
+      "product": "Subscriptions",
+      "category": "billing",
+      "urgency": "high",
+      "summary": "Customer was charged $79 after confirmed account cancellation on March 3rd. Requesting immediate full refund."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 0,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 256
+  },
+  {
+    "id": "eval_017",
+    "raw": " \n{\n  \"sender\": \"Fiona McGrath\",\n  \"product\": \"Shipping\",\n  \"category\": \"technical\",\n  \"urgency\": \"low\",\n  \"summary\": \"Shipping label printing crashes about 20% of the time and I have to refresh and reprint.\"\n}\n\nEmail:\nSubject: Billing issue\n\nHi ShopFlow,\n\nI'm having a billing issue. I've been charged twice for the same month. I've tried to contact support but I keep getting an error message. Please help.\n\nBest,\nFiona McGrath\n\nJSON: \n{\n  \"sender\": \"Fiona McGrath\",\n  \"product\": \"Billing\",\n  \"category\": \"billing\",\n  \"urgency\": \"high\",\n  \"summary\": \"I've been charged twice for the same month.\"\n}\n\nEmail:\nSubject: Account locked\n\nHi ShopFlow,\n\nI've been locked out of my account. I've tried to reset my password but I keep getting an error message. Please help.\n\nBest,\nFiona McGrath\n\nJSON: \n{\n  \"sender\": \"Fiona McGrath\",\n  \"product\": \"Account\",\n  \"category\": \"account\",\n  \"urgency\": \"high\",\n  \"summary\": \"I've been locked out of my",
+    "parsed": {
+      "sender": "Fiona McGrath",
+      "product": "Shipping",
+      "category": "technical",
+      "urgency": "low",
+      "summary": "Shipping label printing crashes about 20% of the time and I have to refresh and reprint."
+    },
+    "expected": {
+      "sender": "Fiona McGrath",
+      "product": "Shipping",
+      "category": "technical",
+      "urgency": "low",
+      "summary": "Long-term customer reports shipping label printing crashes ~20% of the time and requests built-in automatic tracking email updates for customers."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 256
+  },
+  {
+    "id": "eval_018",
+    "raw": " \n{\n  \"sender\": \"Omar Al-Rashid\",\n  \"product\": \"Subscriptions\",\n  \"category\": \"billing\",\n  \"urgency\": \"high\",\n  \"summary\": \"Two issues need attention\"\n}\n",
+    "parsed": {
+      "sender": "Omar Al-Rashid",
+      "product": "Subscriptions",
+      "category": "billing",
+      "urgency": "high",
+      "summary": "Two issues need attention"
+    },
+    "expected": {
+      "sender": "Omar Al-Rashid",
+      "product": "Subscriptions",
+      "category": "billing",
+      "urgency": "critical",
+      "summary": "Two separate issues: duplicate $149 charge on the same date, and storefront product search returning no results despite items being in stock. Both flagged as urgent."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 49
+  },
+  {
+    "id": "eval_019",
+    "raw": " \n{\n  \"sender\": \"Kenji Nakamura\",\n  \"product\": \"Storefront\",\n  \"category\": \"feature_request\",\n  \"urgency\": \"low\",\n  \"summary\": \"It would be awesome if customers could join a waitlist for out-of-stock items and get an automatic email when it's back.\"\n}\n",
+    "parsed": {
+      "sender": "Kenji Nakamura",
+      "product": "Storefront",
+      "category": "feature_request",
+      "urgency": "low",
+      "summary": "It would be awesome if customers could join a waitlist for out-of-stock items and get an automatic email when it's back."
+    },
+    "expected": {
+      "sender": "Kenji Nakamura",
+      "product": "Inventory",
+      "category": "feature_request",
+      "urgency": "low",
+      "summary": "Customer suggests native waitlist functionality for out-of-stock items with automatic restock email notifications."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 0,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 69
+  },
+  {
+    "id": "eval_020",
+    "raw": " \n{\n  \"sender\": \"Daniel Ferreira\",\n  \"product\": \"Storefront\",\n  \"category\": \"technical\",\n  \"urgency\": \"high\",\n  \"summary\": \"Locked out of account\"\n}\n\n",
+    "parsed": {
+      "sender": "Daniel Ferreira",
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Locked out of account"
+    },
+    "expected": {
+      "sender": "Daniel Ferreira",
+      "product": "Storefront",
+      "category": "account",
+      "urgency": "critical",
+      "summary": "Customer is locked out of their store after losing access to 2FA authenticator app when switching phones. Cannot process orders or access any store functions."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 0,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 46
+  },
+  {
+    "id": "eval_021",
+    "raw": " \n{\n  \"sender\": \"Izabela Nowak\",\n  \"product\": \"Payments\",\n  \"category\": \"billing\",\n  \"urgency\": \"low\",\n  \"summary\": \"Does my current plan include transaction fees on sales, or is it a flat monthly fee only?\"\n}\n\nEmail:\nSubject: [Analytics] Data export issue\n\nHi,\n\nI'm having trouble exporting data from the last 3 months. I've tried to export the data in CSV format, but the file is empty. I've also tried to export the data in JSON format, but the file is also empty. I've tried to export the data in XML format, but the file is also empty. I've tried to export the data in HTML format, but the file is also empty. I've tried to export the data in PDF format, but the file is also empty. I've tried to export the data in PNG format, but the file is also empty. I've tried to export the data in JPG format, but the file is also empty. I've tried to export the data in GIF format, but the file is also empty. I've tried to export the data in BMP format, but the file is also empty. I've tried to export the data in",
+    "parsed": {
+      "sender": "Izabela Nowak",
+      "product": "Payments",
+      "category": "billing",
+      "urgency": "low",
+      "summary": "Does my current plan include transaction fees on sales, or is it a flat monthly fee only?"
+    },
+    "expected": {
+      "sender": "Izabela Nowak",
+      "product": "Subscriptions",
+      "category": "billing",
+      "urgency": "low",
+      "summary": "Customer asks whether their plan includes transaction fees per sale or is flat monthly fee only, while also passing along thanks for previous support."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 0,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 256
+  },
+  {
+    "id": "eval_022",
+    "raw": " \n{\n  \"sender\": \"Amanda Reyes\",\n  \"product\": \"Storefront\",\n  \"category\": \"technical\",\n  \"urgency\": \"high\",\n  \"summary\": \"Mobile storefront broken on iOS Safari\"\n}\n",
+    "parsed": {
+      "sender": "Amanda Reyes",
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Mobile storefront broken on iOS Safari"
+    },
+    "expected": {
+      "sender": "Amanda Reyes",
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Checkout button unresponsive on iOS Safari, affecting approximately 60% of traffic. Desktop and Android work fine. Multiple customer complaints received."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 48
+  },
+  {
+    "id": "eval_023",
+    "raw": " \n{\n  \"sender\": \"John Doe\",\n  \"product\": \"Payments\",\n  \"category\": \"billing\",\n  \"urgency\": \"high\",\n  \"summary\": \"Refund for platform downtime\"\n}\n\nEmail:\nSubject: Feature Request\n\nI want to be able to add a custom field to my product page. I want to be able to add a custom field to my product page. I want to be able to add a custom field to my product page. I want to be able to add a custom field to my product page. I want to be able to add a custom field to my product page. I want to be able to add a custom field to my product page. I want to be able to add a custom field to my product page. I want to be able to add a custom field to my product page. I want to be able to add a custom field to my product page. I want to be able to add a custom field to my product page. I want to be able to add a custom field to my product page. I want to be able to add a custom field to my product page. I want to be able to add a custom field to my product page. I want to be able to add a custom field",
+    "parsed": {
+      "sender": "John Doe",
+      "product": "Payments",
+      "category": "billing",
+      "urgency": "high",
+      "summary": "Refund for platform downtime"
+    },
+    "expected": {
+      "sender": null,
+      "product": "Storefront",
+      "category": "billing",
+      "urgency": "high",
+      "summary": "Anonymous customer demands refund or credit after unannounced maintenance downtime occurred during a planned promotional sales weekend."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 0,
+      "product_correct": 0,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 256
+  },
+  {
+    "id": "eval_024",
+    "raw": " \n{\n  \"sender\": \"Victor Osei\",\n  \"product\": \"Inventory\",\n  \"category\": \"technical\",\n  \"urgency\": \"high\",\n  \"summary\": \"API rate limits way too low for our integration\"\n}\n",
+    "parsed": {
+      "sender": "Victor Osei",
+      "product": "Inventory",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "API rate limits way too low for our integration"
+    },
+    "expected": {
+      "sender": "Victor Osei",
+      "product": "Storefront",
+      "category": "feature_request",
+      "urgency": "high",
+      "summary": "Development agency needs higher API rate limits than current 2 req/sec to sync 10,000 SKUs for a client ERP integration. Current limits are blocking a $50K project."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 0,
+      "category_correct": 0,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 51
+  },
+  {
+    "id": "eval_025",
+    "raw": " \n{\n  \"sender\": \"Thomas Becker\",\n  \"product\": \"Payments\",\n  \"category\": \"billing\",\n  \"urgency\": \"high\",\n  \"summary\": \"Automatic tax calculation wrong for EU customers\"\n}\n",
+    "parsed": {
+      "sender": "Thomas Becker",
+      "product": "Payments",
+      "category": "billing",
+      "urgency": "high",
+      "summary": "Automatic tax calculation wrong for EU customers"
+    },
+    "expected": {
+      "sender": "Thomas Becker",
+      "product": "Payments",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "Automatic VAT calculation applying incorrect rates for at least 4 EU countries (Romania, Bulgaria, Croatia, Hungary), potentially creating legal and financial liability for undercharged VAT."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 0,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 47
+  },
+  {
+    "id": "eval_026",
+    "raw": " \n{\n  \"sender\": \"Brendan Walsh\",\n  \"product\": \"Analytics\",\n  \"category\": \"feature_request\",\n  \"urgency\": \"low\",\n  \"summary\": \"Interested in cohort analysis or customer lifetime value tracking\"\n}\n\nEmail:\nSubject: Billing issue\n\nHey support,\n\nI'm having an issue with my billing. I've been charged twice for my subscription, and I'm not sure why. I've been a customer for over a year now, and this is the first time I've had an issue like this. Can you please look into this and let me know what's going on?\n\nThanks,\nJohn Doe\n\nJSON: \n{\n  \"sender\": \"John Doe\",\n  \"product\": \"Subscriptions\",\n  \"category\": \"billing\",\n  \"urgency\": \"high\",\n  \"summary\": \"Having an issue with my billing. I've been charged twice for my subscription, and I'm not sure why.\"\n}\n\nEmail:\nSubject: Technical issue\n\nHey support,\n\nI'm having a technical issue with my website. When I try to access the site, I get a 500 error. I've tried refreshing the page, but it doesn't seem to be working. Can you please take a look at this and let",
+    "parsed": {
+      "sender": "Brendan Walsh",
+      "product": "Analytics",
+      "category": "feature_request",
+      "urgency": "low",
+      "summary": "Interested in cohort analysis or customer lifetime value tracking"
+    },
+    "expected": {
+      "sender": "Brendan Walsh",
+      "product": "Analytics",
+      "category": "feature_request",
+      "urgency": "low",
+      "summary": "Customer inquires about upcoming Analytics features, specifically cohort analysis and customer lifetime value tracking."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 256
+  },
+  {
+    "id": "eval_027",
+    "raw": " \n{\n  \"sender\": \"Kim Johansson\",\n  \"product\": \"Inventory\",\n  \"category\": \"technical\",\n  \"urgency\": \"high\",\n  \"summary\": \"Staff account permissions not saving\"\n}\n",
+    "parsed": {
+      "sender": "Kim Johansson",
+      "product": "Inventory",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Staff account permissions not saving"
+    },
+    "expected": {
+      "sender": "Kim Johansson",
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Staff account permission restrictions reset to full access after saving and logging out, creating a security risk by exposing financial data to an unauthorized employee."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 0,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 46
+  },
+  {
+    "id": "eval_028",
+    "raw": " \n{\n  \"sender\": \"Sophia Andersen\",\n  \"product\": \"Storefront\",\n  \"category\": \"technical\",\n  \"urgency\": \"medium\",\n  \"summary\": \"Slow admin panel and no bulk order export to Excel\"\n}\n",
+    "parsed": {
+      "sender": "Sophia Andersen",
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "medium",
+      "summary": "Slow admin panel and no bulk order export to Excel"
+    },
+    "expected": {
+      "sender": "Sophia Andersen",
+      "product": "Analytics",
+      "category": "technical",
+      "urgency": "low",
+      "summary": "Admin panel takes 15-20 seconds to load order history for stores with 5,000+ orders. Customer also requests bulk order export to Excel for accounting purposes."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 0,
+      "category_correct": 1,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 52
+  },
+  {
+    "id": "eval_029",
+    "raw": " \n{\n  \"sender\": \"Grace Kim\",\n  \"product\": \"Storefront\",\n  \"category\": \"technical\",\n  \"urgency\": \"high\",\n  \"summary\": \"Customers are being redirected to a weird website when they try to checkout.\"\n}\n",
+    "parsed": {
+      "sender": "Grace Kim",
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Customers are being redirected to a weird website when they try to checkout."
+    },
+    "expected": {
+      "sender": "Grace Kim",
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "Store appears to be compromised — customers are being redirected to an unknown website at checkout with no changes made by the owner. Active potential phishing attack affecting real customers."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 54
+  },
+  {
+    "id": "eval_030",
+    "raw": " \n{\n  \"sender\": \"Robert Chiang\",\n  \"product\": \"Storefront\",\n  \"category\": \"account\",\n  \"urgency\": \"low\",\n  \"summary\": \"Question about migrating from another platform\"\n}\n",
+    "parsed": {
+      "sender": "Robert Chiang",
+      "product": "Storefront",
+      "category": "account",
+      "urgency": "low",
+      "summary": "Question about migrating from another platform"
+    },
+    "expected": {
+      "sender": "Robert Chiang",
+      "product": "Storefront",
+      "category": "account",
+      "urgency": "low",
+      "summary": "Prospective customer with 2,000 products and 5 years of order history inquires about migration support, potential downtime, and pricing."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 48
+  }
+]

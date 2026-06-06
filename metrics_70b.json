@@ -1,0 +1,12 @@
+{
+  "model": "Llama-3.3-70B (Groq API)",
+  "json_valid": 0.0,
+  "exact_match": 0.0,
+  "sender_accuracy": 0.0,
+  "product_accuracy": 0.0,
+  "category_accuracy": 0.0,
+  "urgency_accuracy": 0.0,
+  "summary_present": 0.0,
+  "avg_tokens": 0.0,
+  "avg_latency_sec": 0.0
+}

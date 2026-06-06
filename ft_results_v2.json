@@ -1,0 +1,842 @@
+[
+  {
+    "id": "eval_001",
+    "raw": " {\"sender\": \"Marcus Webb\", \"product\": \"Payments\", \"category\": \"technical\", \"urgency\": \"critical\", \"summary\": \"Black Friday checkout failure since 2 AM affecting all payment methods, estimated $4,000 in lost sales. Critical urgency.\"}",
+    "parsed": {
+      "sender": "Marcus Webb",
+      "product": "Payments",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "Black Friday checkout failure since 2 AM affecting all payment methods, estimated $4,000 in lost sales. Critical urgency."
+    },
+    "expected": {
+      "sender": "Marcus Webb",
+      "product": "Payments",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "Payment processing is completely down since 2 AM on Black Friday, affecting all payment methods. Owner estimates $4,000 in lost sales and demands immediate resolution."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 57
+  },
+  {
+    "id": "eval_002",
+    "raw": " {\"sender\": \"Priya Sharma\", \"product\": \"Subscriptions\", \"category\": \"billing\", \"urgency\": \"high\", \"summary\": \"Customer on $79/month plan charged $299 without warning or explanation. Immediate refund required and explanation requested.\"}",
+    "parsed": {
+      "sender": "Priya Sharma",
+      "product": "Subscriptions",
+      "category": "billing",
+      "urgency": "high",
+      "summary": "Customer on $79/month plan charged $299 without warning or explanation. Immediate refund required and explanation requested."
+    },
+    "expected": {
+      "sender": "Priya Sharma",
+      "product": "Subscriptions",
+      "category": "billing",
+      "urgency": "high",
+      "summary": "Customer was charged $299 instead of $79/month with no explanation. Requesting immediate refund of the $220 difference."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 55
+  },
+  {
+    "id": "eval_003",
+    "raw": " {\"sender\": \"Tom Bradley\", \"product\": \"Inventory\", \"category\": \"feature_request\", \"urgency\": \"low\", \"summary\": \"Suggests CSV bulk product import feature to save time on manual product addition.\"}",
+    "parsed": {
+      "sender": "Tom Bradley",
+      "product": "Inventory",
+      "category": "feature_request",
+      "urgency": "low",
+      "summary": "Suggests CSV bulk product import feature to save time on manual product addition."
+    },
+    "expected": {
+      "sender": "Tom Bradley",
+      "product": "Inventory",
+      "category": "feature_request",
+      "urgency": "low",
+      "summary": "Customer requests CSV bulk import functionality for products to avoid manual entry one by one."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 49
+  },
+  {
+    "id": "eval_004",
+    "raw": " {\"sender\": \"Sarah Chen\", \"product\": \"Analytics\", \"category\": \"technical\", \"urgency\": \"high\", \"summary\": \"Analytics dashboard showing blank white screen for 3 days, blocking access to sales data. Customer needs report by end of week.\"}",
+    "parsed": {
+      "sender": "Sarah Chen",
+      "product": "Analytics",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Analytics dashboard showing blank white screen for 3 days, blocking access to sales data. Customer needs report by end of week."
+    },
+    "expected": {
+      "sender": "Sarah Chen",
+      "product": "Analytics",
+      "category": "technical",
+      "urgency": "medium",
+      "summary": "Analytics dashboard shows blank white screen for 3 days across multiple browsers. Customer needs monthly sales report for accountant by end of week."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 57
+  },
+  {
+    "id": "eval_005",
+    "raw": " {\"sender\": \"David Okonkwo\", \"product\": \"Subscriptions\", \"category\": \"account\", \"urgency\": \"low\", \"summary\": \"Customer wants to update invoice email address and can't find the setting.\"}",
+    "parsed": {
+      "sender": "David Okonkwo",
+      "product": "Subscriptions",
+      "category": "account",
+      "urgency": "low",
+      "summary": "Customer wants to update invoice email address and can't find the setting."
+    },
+    "expected": {
+      "sender": "David Okonkwo",
+      "product": "Subscriptions",
+      "category": "account",
+      "urgency": "low",
+      "summary": "Customer wants to update billing email address and cannot find the option in settings."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 50
+  },
+  {
+    "id": "eval_006",
+    "raw": " {\"sender\": \"Anna Kowalski\", \"product\": \"Shipping\", \"category\": \"technical\", \"urgency\": \"critical\", \"summary\": \"Flat-rate shipping option broken for a week, customers being overcharged randomly. Owner has manually refunded $67 out of pocket.\"}",
+    "parsed": {
+      "sender": "Anna Kowalski",
+      "product": "Shipping",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "Flat-rate shipping option broken for a week, customers being overcharged randomly. Owner has manually refunded $67 out of pocket."
+    },
+    "expected": {
+      "sender": "Anna Kowalski",
+      "product": "Shipping",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Flat-rate shipping is being ignored and customers are charged incorrect amounts. Owner has already refunded $67 manually and received complaints from three customers."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 60
+  },
+  {
+    "id": "eval_007",
+    "raw": " {\"sender\": \"Elena Vasquez\", \"product\": \"Subscriptions\", \"category\": \"feature_request\", \"urgency\": \"low\", \"summary\": \"Two feature requests: scheduled sales and mobile order management app.\"}",
+    "parsed": {
+      "sender": "Elena Vasquez",
+      "product": "Subscriptions",
+      "category": "feature_request",
+      "urgency": "low",
+      "summary": "Two feature requests: scheduled sales and mobile order management app."
+    },
+    "expected": {
+      "sender": "Elena Vasquez",
+      "product": "Storefront",
+      "category": "feature_request",
+      "urgency": "low",
+      "summary": "Customer requests two features: scheduled/automated discounts and a mobile app for order management. Both noted as non-urgent quality-of-life improvements."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 0,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 48
+  },
+  {
+    "id": "eval_008",
+    "raw": " {\"sender\": \"James Porter\", \"product\": \"Subscriptions\", \"category\": \"account\", \"urgency\": \"medium\", \"summary\": \"Customer requests subscription cancellation and confirmation of no further charges.\"}",
+    "parsed": {
+      "sender": "James Porter",
+      "product": "Subscriptions",
+      "category": "account",
+      "urgency": "medium",
+      "summary": "Customer requests subscription cancellation and confirmation of no further charges."
+    },
+    "expected": {
+      "sender": "James Porter",
+      "product": "Subscriptions",
+      "category": "account",
+      "urgency": "medium",
+      "summary": "Customer wants to cancel subscription due to store closure and requests confirmation of cancellation to avoid future charges."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 44
+  },
+  {
+    "id": "eval_009",
+    "raw": " {\"sender\": null, \"product\": \"Storefront\", \"category\": \"technical\", \"urgency\": \"critical\", \"summary\": \"Anonymous rant about platform outages, slow support, and copy-paste responses. Store down for 6 hours on Saturday during peak shopping time.\"}",
+    "parsed": {
+      "sender": null,
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "Anonymous rant about platform outages, slow support, and copy-paste responses. Store down for 6 hours on Saturday during peak shopping time."
+    },
+    "expected": {
+      "sender": null,
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "Customer reports recurring weekend storefront outages, most recently 6 hours of downtime on Saturday during peak hours. Deeply frustrated with slow and unhelpful support responses."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 60
+  },
+  {
+    "id": "eval_010",
+    "raw": " {\"sender\": \"Michelle Tran\", \"product\": \"Subscriptions\", \"category\": \"account\", \"urgency\": \"low\", \"summary\": \"Customer on Starter plan asks if Growth plan includes unlimited staff accounts before upgrading.\"}",
+    "parsed": {
+      "sender": "Michelle Tran",
+      "product": "Subscriptions",
+      "category": "account",
+      "urgency": "low",
+      "summary": "Customer on Starter plan asks if Growth plan includes unlimited staff accounts before upgrading."
+    },
+    "expected": {
+      "sender": "Michelle Tran",
+      "product": "Subscriptions",
+      "category": "account",
+      "urgency": "low",
+      "summary": "Customer on Starter plan asks whether Growth plan includes unlimited staff accounts before deciding to upgrade."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 48
+  },
+  {
+    "id": "eval_011",
+    "raw": " {\"sender\": \"Raj Patel\", \"product\": \"Payments\", \"category\": \"technical\", \"urgency\": \"critical\", \"summary\": \"Stripe integration failure at checkout blocking all payments for 40 minutes, causing $500 loss per 10 minutes during flash sale with 200 customers.\"}",
+    "parsed": {
+      "sender": "Raj Patel",
+      "product": "Payments",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "Stripe integration failure at checkout blocking all payments for 40 minutes, causing $500 loss per 10 minutes during flash sale with 200 customers."
+    },
+    "expected": {
+      "sender": "Raj Patel",
+      "product": "Payments",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "Stripe integration failed 40 minutes ago during an active flash sale with 200 concurrent visitors. All checkouts failing, estimated loss of $500 per 10 minutes."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 62
+  },
+  {
+    "id": "eval_012",
+    "raw": " {\"sender\": \"Lucy Hartmann\", \"product\": \"Payments\", \"category\": \"technical\", \"urgency\": \"medium\", \"summary\": \"Customer reports percentage discount code recalculating incorrectly after cart quantity change, potentially exploitable.\"}",
+    "parsed": {
+      "sender": "Lucy Hartmann",
+      "product": "Payments",
+      "category": "technical",
+      "urgency": "medium",
+      "summary": "Customer reports percentage discount code recalculating incorrectly after cart quantity change, potentially exploitable."
+    },
+    "expected": {
+      "sender": "Lucy Hartmann",
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "medium",
+      "summary": "Discount code recalculates incorrectly when cart quantity is changed after applying a percentage discount. Customer has reproduced it consistently and flags potential for exploitation."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 0,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 52
+  },
+  {
+    "id": "eval_013",
+    "raw": " {\"sender\": \"Hans Mueller\", \"product\": \"Subscriptions\", \"category\": \"billing\", \"urgency\": \"low\", \"summary\": \"Customer requests VAT invoices for last 3 months for quarterly tax filing.\"}",
+    "parsed": {
+      "sender": "Hans Mueller",
+      "product": "Subscriptions",
+      "category": "billing",
+      "urgency": "low",
+      "summary": "Customer requests VAT invoices for last 3 months for quarterly tax filing."
+    },
+    "expected": {
+      "sender": "Hans Mueller",
+      "product": "Subscriptions",
+      "category": "billing",
+      "urgency": "medium",
+      "summary": "Customer requests VAT invoices for the last 3 months for quarterly tax filing purposes."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 48
+  },
+  {
+    "id": "eval_014",
+    "raw": " {\"sender\": \"Caroline and Steve Marsh\", \"product\": \"Inventory\", \"category\": \"technical\", \"urgency\": \"critical\", \"summary\": \"POS and online inventory not syncing since update last Tuesday, causing overselling and order cancellations. Critical reputation risk.\"}",
+    "parsed": {
+      "sender": "Caroline and Steve Marsh",
+      "product": "Inventory",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "POS and online inventory not syncing since update last Tuesday, causing overselling and order cancellations. Critical reputation risk."
+    },
+    "expected": {
+      "sender": "Caroline and Steve Marsh",
+      "product": "Inventory",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Inventory sync between POS and online store broke after last Tuesday's update. 12 items oversold, requiring order cancellations and damaging customer relationships."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 58
+  },
+  {
+    "id": "eval_015",
+    "raw": " {\"sender\": null, \"product\": \"Storefront\", \"category\": \"technical\", \"urgency\": \"high\", \"summary\": \"Anonymous contact form submission reporting image compression destroying color accuracy of product photos, causing customer returns.\"}",
+    "parsed": {
+      "sender": null,
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Anonymous contact form submission reporting image compression destroying color accuracy of product photos, causing customer returns."
+    },
+    "expected": {
+      "sender": null,
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Image compression is degrading product photo quality for a ceramics seller, causing color inaccuracy, customer disappointment, and returns. Requesting lossless upload or manual compression control."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 49
+  },
+  {
+    "id": "eval_016",
+    "raw": " {\"sender\": \"Natalie Brooks\", \"product\": \"Subscriptions\", \"category\": \"billing\", \"urgency\": \"critical\", \"summary\": \"Account cancelled on March 3 but charged $79 on April 1 despite confirmation email. Customer demands immediate full refund.\"}",
+    "parsed": {
+      "sender": "Natalie Brooks",
+      "product": "Subscriptions",
+      "category": "billing",
+      "urgency": "critical",
+      "summary": "Account cancelled on March 3 but charged $79 on April 1 despite confirmation email. Customer demands immediate full refund."
+    },
+    "expected": {
+      "sender": "Natalie Brooks",
+      "product": "Subscriptions",
+      "category": "billing",
+      "urgency": "high",
+      "summary": "Customer was charged $79 after confirmed account cancellation on March 3rd. Requesting immediate full refund."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 59
+  },
+  {
+    "id": "eval_017",
+    "raw": " {\"sender\": \"Fiona McGrath\", \"product\": \"Shipping\", \"category\": \"technical\", \"urgency\": \"medium\", \"summary\": \"Customer has been using ShopFlow for 2 years and provides constructive feedback on shipping label printing crashes and missing automatic customer tracking email feature.\"}",
+    "parsed": {
+      "sender": "Fiona McGrath",
+      "product": "Shipping",
+      "category": "technical",
+      "urgency": "medium",
+      "summary": "Customer has been using ShopFlow for 2 years and provides constructive feedback on shipping label printing crashes and missing automatic customer tracking email feature."
+    },
+    "expected": {
+      "sender": "Fiona McGrath",
+      "product": "Shipping",
+      "category": "technical",
+      "urgency": "low",
+      "summary": "Long-term customer reports shipping label printing crashes ~20% of the time and requests built-in automatic tracking email updates for customers."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 61
+  },
+  {
+    "id": "eval_018",
+    "raw": " {\"sender\": \"Omar Al-Rashid\", \"product\": \"Subscriptions\", \"category\": \"billing\", \"urgency\": \"high\", \"summary\": \"Two issues: duplicate subscription charge and broken product search on storefront.\"}",
+    "parsed": {
+      "sender": "Omar Al-Rashid",
+      "product": "Subscriptions",
+      "category": "billing",
+      "urgency": "high",
+      "summary": "Two issues: duplicate subscription charge and broken product search on storefront."
+    },
+    "expected": {
+      "sender": "Omar Al-Rashid",
+      "product": "Subscriptions",
+      "category": "billing",
+      "urgency": "critical",
+      "summary": "Two separate issues: duplicate $149 charge on the same date, and storefront product search returning no results despite items being in stock. Both flagged as urgent."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 50
+  },
+  {
+    "id": "eval_019",
+    "raw": " {\"sender\": \"Kenji Nakamura\", \"product\": \"Inventory\", \"category\": \"feature_request\", \"urgency\": \"low\", \"summary\": \"Customer suggests native waiting list and automatic email notification feature for out-of-stock items, currently done by third-party apps.\"}",
+    "parsed": {
+      "sender": "Kenji Nakamura",
+      "product": "Inventory",
+      "category": "feature_request",
+      "urgency": "low",
+      "summary": "Customer suggests native waiting list and automatic email notification feature for out-of-stock items, currently done by third-party apps."
+    },
+    "expected": {
+      "sender": "Kenji Nakamura",
+      "product": "Inventory",
+      "category": "feature_request",
+      "urgency": "low",
+      "summary": "Customer suggests native waitlist functionality for out-of-stock items with automatic restock email notifications."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 58
+  },
+  {
+    "id": "eval_020",
+    "raw": " {\"sender\": \"Daniel Ferreira\", \"product\": \"Subscriptions\", \"category\": \"account\", \"urgency\": \"critical\", \"summary\": \"Two-factor authentication setup last week locked out account after phone change, preventing all access to store and orders.\"}",
+    "parsed": {
+      "sender": "Daniel Ferreira",
+      "product": "Subscriptions",
+      "category": "account",
+      "urgency": "critical",
+      "summary": "Two-factor authentication setup last week locked out account after phone change, preventing all access to store and orders."
+    },
+    "expected": {
+      "sender": "Daniel Ferreira",
+      "product": "Storefront",
+      "category": "account",
+      "urgency": "critical",
+      "summary": "Customer is locked out of their store after losing access to 2FA authenticator app when switching phones. Cannot process orders or access any store functions."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 0,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 55
+  },
+  {
+    "id": "eval_021",
+    "raw": " {\"sender\": \"Izabela Nowak\", \"product\": \"Subscriptions\", \"category\": \"billing\", \"urgency\": \"low\", \"summary\": \"Sarcastic thank-you note followed by a billing question about transaction fees vs flat rate.\"}",
+    "parsed": {
+      "sender": "Izabela Nowak",
+      "product": "Subscriptions",
+      "category": "billing",
+      "urgency": "low",
+      "summary": "Sarcastic thank-you note followed by a billing question about transaction fees vs flat rate."
+    },
+    "expected": {
+      "sender": "Izabela Nowak",
+      "product": "Subscriptions",
+      "category": "billing",
+      "urgency": "low",
+      "summary": "Customer asks whether their plan includes transaction fees per sale or is flat monthly fee only, while also passing along thanks for previous support."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 55
+  },
+  {
+    "id": "eval_022",
+    "raw": " {\"sender\": \"Amanda Reyes\", \"product\": \"Storefront\", \"category\": \"technical\", \"urgency\": \"high\", \"summary\": \"Checkout button non-responsive on iOS Safari only, impacting 60% of mobile traffic and causing sales loss.\"}",
+    "parsed": {
+      "sender": "Amanda Reyes",
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Checkout button non-responsive on iOS Safari only, impacting 60% of mobile traffic and causing sales loss."
+    },
+    "expected": {
+      "sender": "Amanda Reyes",
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Checkout button unresponsive on iOS Safari, affecting approximately 60% of traffic. Desktop and Android work fine. Multiple customer complaints received."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 55
+  },
+  {
+    "id": "eval_023",
+    "raw": " {\"sender\": null, \"product\": \"Subscriptions\", \"category\": \"account\", \"urgency\": \"high\", \"summary\": \"Anonymous customer requests refund for month with unannounced maintenance outage during planned promotion weekend, demanding at least one month's credit.\"}",
+    "parsed": {
+      "sender": null,
+      "product": "Subscriptions",
+      "category": "account",
+      "urgency": "high",
+      "summary": "Anonymous customer requests refund for month with unannounced maintenance outage during planned promotion weekend, demanding at least one month's credit."
+    },
+    "expected": {
+      "sender": null,
+      "product": "Storefront",
+      "category": "billing",
+      "urgency": "high",
+      "summary": "Anonymous customer demands refund or credit after unannounced maintenance downtime occurred during a planned promotional sales weekend."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 0,
+      "category_correct": 0,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 56
+  },
+  {
+    "id": "eval_024",
+    "raw": " {\"sender\": \"Victor Osei\", \"product\": \"Inventory\", \"category\": \"technical\", \"urgency\": \"high\", \"summary\": \"Custom ERP integration blocked by inadequate API rate limit of 2 requests/second for syncing 10,000 SKUs, blocking $50K project.\"}",
+    "parsed": {
+      "sender": "Victor Osei",
+      "product": "Inventory",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Custom ERP integration blocked by inadequate API rate limit of 2 requests/second for syncing 10,000 SKUs, blocking $50K project."
+    },
+    "expected": {
+      "sender": "Victor Osei",
+      "product": "Storefront",
+      "category": "feature_request",
+      "urgency": "high",
+      "summary": "Development agency needs higher API rate limits than current 2 req/sec to sync 10,000 SKUs for a client ERP integration. Current limits are blocking a $50K project."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 0,
+      "category_correct": 0,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 64
+  },
+  {
+    "id": "eval_025",
+    "raw": " {\"sender\": \"Thomas Becker\", \"product\": \"Payments\", \"category\": \"technical\", \"urgency\": \"critical\", \"summary\": \"Automatic VAT calculation applying incorrect rates for 4 EU countries, potentially creating legal and financial liability for the seller.\"}",
+    "parsed": {
+      "sender": "Thomas Becker",
+      "product": "Payments",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "Automatic VAT calculation applying incorrect rates for 4 EU countries, potentially creating legal and financial liability for the seller."
+    },
+    "expected": {
+      "sender": "Thomas Becker",
+      "product": "Payments",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "Automatic VAT calculation applying incorrect rates for at least 4 EU countries (Romania, Bulgaria, Croatia, Hungary), potentially creating legal and financial liability for undercharged VAT."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 54
+  },
+  {
+    "id": "eval_026",
+    "raw": " {\"sender\": \"Brendan Walsh\", \"product\": \"Analytics\", \"category\": \"feature_request\", \"urgency\": \"low\", \"summary\": \"Non-urgent feature request for cohort analysis or customer lifetime value tracking in Analytics.\"}",
+    "parsed": {
+      "sender": "Brendan Walsh",
+      "product": "Analytics",
+      "category": "feature_request",
+      "urgency": "low",
+      "summary": "Non-urgent feature request for cohort analysis or customer lifetime value tracking in Analytics."
+    },
+    "expected": {
+      "sender": "Brendan Walsh",
+      "product": "Analytics",
+      "category": "feature_request",
+      "urgency": "low",
+      "summary": "Customer inquires about upcoming Analytics features, specifically cohort analysis and customer lifetime value tracking."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 51
+  },
+  {
+    "id": "eval_027",
+    "raw": " {\"sender\": \"Kim Johansson\", \"product\": \"Inventory\", \"category\": \"technical\", \"urgency\": \"high\", \"summary\": \"Staff account permission settings reverting to full access after each save, allowing employee to see financial data despite restricted permissions.\"}",
+    "parsed": {
+      "sender": "Kim Johansson",
+      "product": "Inventory",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Staff account permission settings reverting to full access after each save, allowing employee to see financial data despite restricted permissions."
+    },
+    "expected": {
+      "sender": "Kim Johansson",
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "high",
+      "summary": "Staff account permission restrictions reset to full access after saving and logging out, creating a security risk by exposing financial data to an unauthorized employee."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 0,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 56
+  },
+  {
+    "id": "eval_028",
+    "raw": " {\"sender\": \"Sophia Andersen\", \"product\": \"Storefront\", \"category\": \"technical\", \"urgency\": \"medium\", \"summary\": \"3-store owner reports admin panel order history loading slowly for stores with more than 5,000 orders (15-20 seconds) and requests bulk order export to Excel.\"}",
+    "parsed": {
+      "sender": "Sophia Andersen",
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "medium",
+      "summary": "3-store owner reports admin panel order history loading slowly for stores with more than 5,000 orders (15-20 seconds) and requests bulk order export to Excel."
+    },
+    "expected": {
+      "sender": "Sophia Andersen",
+      "product": "Analytics",
+      "category": "technical",
+      "urgency": "low",
+      "summary": "Admin panel takes 15-20 seconds to load order history for stores with 5,000+ orders. Customer also requests bulk order export to Excel for accounting purposes."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 0,
+      "category_correct": 1,
+      "urgency_correct": 0,
+      "summary_present": 1,
+      "exact_match": 0
+    },
+    "tokens": 68
+  },
+  {
+    "id": "eval_029",
+    "raw": " {\"sender\": \"Grace Kim\", \"product\": \"Storefront\", \"category\": \"technical\", \"urgency\": \"critical\", \"summary\": \"Real-time checkout redirect issue suggests store compromise with potential phishing attack. Immediate security investigation required.\"}",
+    "parsed": {
+      "sender": "Grace Kim",
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "Real-time checkout redirect issue suggests store compromise with potential phishing attack. Immediate security investigation required."
+    },
+    "expected": {
+      "sender": "Grace Kim",
+      "product": "Storefront",
+      "category": "technical",
+      "urgency": "critical",
+      "summary": "Store appears to be compromised — customers are being redirected to an unknown website at checkout with no changes made by the owner. Active potential phishing attack affecting real customers."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 51
+  },
+  {
+    "id": "eval_030",
+    "raw": " {\"sender\": \"Robert Chiang\", \"product\": \"Storefront\", \"category\": \"account\", \"urgency\": \"low\", \"summary\": \"Prospective customer asking about migration support and downtime for 2,000-product store with 5 years of data.\"}",
+    "parsed": {
+      "sender": "Robert Chiang",
+      "product": "Storefront",
+      "category": "account",
+      "urgency": "low",
+      "summary": "Prospective customer asking about migration support and downtime for 2,000-product store with 5 years of data."
+    },
+    "expected": {
+      "sender": "Robert Chiang",
+      "product": "Storefront",
+      "category": "account",
+      "urgency": "low",
+      "summary": "Prospective customer with 2,000 products and 5 years of order history inquires about migration support, potential downtime, and pricing."
+    },
+    "scores": {
+      "json_valid": 1,
+      "sender_correct": 1,
+      "product_correct": 1,
+      "category_correct": 1,
+      "urgency_correct": 1,
+      "summary_present": 1,
+      "exact_match": 1
+    },
+    "tokens": 57
+  }
+]

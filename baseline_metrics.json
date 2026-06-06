@@ -1,0 +1,11 @@
+{
+  "model": "Llama-3.1-8B-base",
+  "json_valid": 100.0,
+  "exact_match": 33.3,
+  "sender_accuracy": 90.0,
+  "product_accuracy": 63.3,
+  "category_accuracy": 76.7,
+  "urgency_accuracy": 63.3,
+  "summary_present": 100.0,
+  "avg_tokens": 125.1
+}
