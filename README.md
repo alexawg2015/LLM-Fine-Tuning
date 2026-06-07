@@ -71,6 +71,25 @@ QLoRA 4-bit, LoRA r=16, alpha=32, 3 epochs, LR=2e-4, batch=2, grad_accum=8.
 ### Крок 6 — Re-Evaluation
 Той самий eval set, той самий промпт — для чистого порівняння з baseline.
 
+### Збереження адаптера
+LoRA адаптер збережено окремо від базової моделі — лише навчені ваги, не вся модель (8B параметрів).
+
+Фактичний розмір адаптера: **176 MB** (умова завдання очікувала ~50 MB). Різниця пояснюється конфігурацією:
+
+| Параметр | Умова | Наш експеримент |
+|---|---|---|
+| LoRA rank (r) | не вказано | 16 |
+| Target modules | не вказано | 7 (q, k, v, o, gate, up, down proj) |
+| Layers | 32 | 32 |
+| LoRA ваги | ~50 MB | ~140 MB |
+| Токенайзер | не включено | ~17 MB |
+| Конфіги | — | ~5 MB |
+| **Разом** | **~50 MB** | **~176 MB** |
+
+~50 MB відповідає меншій конфігурації (r=8, лише attention layers без MLP). Наша конфігурація r=16 з повним набором target_modules дає кращу якість але більший адаптер. Це свідомий trade-off.
+
+Ваги зберігаються на Kaggle (не в репо — GitHub має ліміт 100 MB на файл).
+
 ---
 
 ## Результати
@@ -184,11 +203,15 @@ Fine-tuned Llama 3.1 8B є кращим вибором для production ніж 
 | `lesson17_experiment2.ipynb` | Exp 2: fine-tuning з validation set |
 | `eval_set.jsonl` | 30 eval прикладів (створено до training) |
 | `training_set.jsonl` | 300 training прикладів |
-| `baseline_metrics.json` | Метрики base моделі |
-| `ft_metrics.json` | Метрики fine-tuned v1 |
-| `metrics_v2.json` | Метрики fine-tuned v2 |
-| `metrics_70b.json` | Метрики Llama 3.3 70B |
-| `lora_adapter/` | LoRA адаптер |
+| `baseline_metrics.json` | Зведені метрики base моделі |
+| `baseline_results.json` | Сирі відповіді base моделі на 30 eval прикладах |
+| `ft_metrics.json` | Зведені метрики fine-tuned v1 |
+| `ft_results.json` | Сирі відповіді fine-tuned v1 на 30 eval прикладах |
+| `metrics_v2.json` | Зведені метрики fine-tuned v2 |
+| `ft_results_v2.json` | Сирі відповіді fine-tuned v2 на 30 eval прикладах |
+| `metrics_70b.json` | Зведені метрики Llama 3.3 70B |
+| `results_70b.json` | Сирі відповіді Llama 3.3 70B на 30 eval прикладах |
+| `lora_adapter/` | LoRA адаптер (~176 MB = 140 MB ваги + 17 MB токенайзер + конфіги) — зберігається на Kaggle, не в репо |
 
 ## Відтворення
 
